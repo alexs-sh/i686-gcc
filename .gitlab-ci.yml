@@ -1,0 +1,9 @@
+build:
+  image: archlinux
+  script:
+    - pacman -Sy
+    - pacman -S --noconfirm make gcc autoconf wget binutils texinfo perl
+    - ./build.sh
+    - ./out/bin/i686-elf-gcc --version
+  tags:
+    - docker
